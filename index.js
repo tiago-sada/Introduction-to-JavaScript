@@ -18,6 +18,8 @@ Do the following:
    HINT: no function required
 */
 
+const votingAge =17;
+console.log(votingAge >= 18)
 
 
 /*
@@ -31,7 +33,12 @@ Do the following:
    HINT: no function required
 */
 
+let myName = "Tiago";
+let yourName = "Matt";
 
+if (yourName > myName) {
+  myName = yourName;
+}
 
 
 
@@ -46,8 +53,9 @@ Do the following:
    HINT: look up the Number method
 */
 
-
-
+let year = "1999";
+year = Number(year);
+console.log(year);
 
 /*
 Task 1d - Multiply
@@ -58,8 +66,8 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(num1, num2){
+    return num1 * num2;
   }
 
 
@@ -74,8 +82,8 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age){
+    return age * 7;
 }
 
 
@@ -107,8 +115,32 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight, age){
+  let food;
+    if (age < 1) {
+
+      if (age <= (4/12)) {
+          food = weight *.10;
+      } else if (age <= (7/12)) {
+         food = weight *.05;
+      } else {
+        food = weight *.04;
+      }
+
+    } else {
+      
+      if (weight <= 5) {
+          food = weight *.05;
+      } else if (weight <= 10) {
+          food = weight *.04;
+      } else if (weight <= 15) {
+          food = weight *.03;
+      } else {
+        food = weight *.02;
+      }
+
+    }
+    return food;
   }
 
 
@@ -135,7 +167,54 @@ Use the game function below to do the following:
 */
 
 function game(user, computer){
-    /*add your code here*/
+    let result;
+
+    switch (user) {
+
+      case "rock": 
+        switch (computer) {
+          case "rock":
+            result = "it's a tie";
+            break;
+          case "paper":
+            result = "you lose!";
+            break;
+          case "scissors":
+            result = "you win!";
+            break;
+        }
+        break;
+
+      case "paper": 
+        switch (computer) {
+          case "rock":
+            result = "you win!";
+            break;
+          case "paper":
+            result = "it's a tie";
+            break;
+          case "scissors":
+            result = "you lose!";
+            break;
+        }
+        break;
+      
+      case "scissors": 
+        switch (computer) {
+          case "rock":
+            result = "you lose!";
+            break;
+          case "paper":
+            result = "you win!";
+            break;
+          case "scissors":
+            result = "it's a tie";
+            break;
+        }
+    }
+    
+    return result;
+
 }
   
   
